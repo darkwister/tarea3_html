@@ -1,0 +1,19 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    border-radius: 10xp;
+    font-family: 'Lucida Console', sans-serif;
+    color: black;
+    background-color:#ffe5ff;
+    /*
+    color pallete:
+        #111451
+        #796095
+        #7ddcc9
+        #ffe5ff
+    Source: https://lospec.com/palette-list/miku-fresh-retuned
+    */
+}
