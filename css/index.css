@@ -4,6 +4,7 @@ html{
 }
 
 body{
+    align-items: center;
     border-radius: 10xp;
     font-family: 'Lucida Console', sans-serif;
     color: black;
@@ -16,4 +17,16 @@ body{
         #ffe5ff
     Source: https://lospec.com/palette-list/miku-fresh-retuned
     */
+}
+.agenda{
+    padding: 10px;
+    border-width: 20px;
+}
+
+.contactos{
+
+}
+
+.contactos_fields{
+    fill: violet;
 }
