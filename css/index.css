@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Console', sans-serif;
-    color:#7ddcc9;
+    font-family: 'Space Grotesk Medium', sans-serif;
+    /*
+    Origen: https://fonts.google.com/specimen/Space+Grotesk
+    */
+    color: #7ddcc9;
 }
 
 html {
@@ -13,9 +16,9 @@ html {
 
 body {
     align-items: center;
-    color: black;
     background-color: #ffe5ff;
     display: flex;
+    font-family: 'Lucida Console', sans-serif;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -68,8 +71,8 @@ body {
     padding: 10px;
     border: none;
     outline: none;
-    background-color: #796095; 
-    color: white;
+    background-color: #ffe5ff; 
+    color: #796095;
     font-size: 16px;
     border-radius: 8px;
 }
@@ -79,10 +82,15 @@ body {
     border: none;
     margin-left: 10px;
     cursor: pointer;
-    
+    color: #7ddcc9;
+    font-size: 18px;
+    padding: 6px;
 }
-
+.buscador button:hover{
+    color:azure;
+}
 .contactos_fields {
+    font-family: inherit;
     grid-column: 2;
     grid-row: 2 / span 2;
     display: flex;
@@ -96,17 +104,17 @@ body {
 
 .contactos_fields label {
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 18px;
     color: #7ddcc9; 
 }
 
 .contactos_fields input {
     padding: 10px;
-    margin-bottom: 15px;
-    background-color: #796095; 
+    margin-bottom: 18px;
+    background-color: #ffe5ff; 
     border: 2px solid #7ddcc9; 
     border-radius: 8px;
-    color: white;
+    color: #796095;
     outline: none;
 }
 
@@ -124,9 +132,9 @@ body {
     background-color: #45a049;
 }
 
-.contactos_content{
+.contactos_content {
     padding: 10px;
-    background-color:#111451;
+    background-color: #111451;
     border-radius: 8px;
     border: 2px solid #7ddcc9;
 }
