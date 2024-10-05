@@ -1,32 +1,134 @@
-html{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Console', sans-serif;
+    color:#7ddcc9;
+}
+
+html {
     box-sizing: border-box;
     height: 100%;
 }
 
-body{
+body {
     align-items: center;
-    border-radius: 10xp;
-    font-family: 'Lucida Console', sans-serif;
     color: black;
-    background-color:#ffe5ff;
+    background-color: #ffe5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     /*
-    color pallete:
-        #111451
-        #796095
-        #7ddcc9
-        #ffe5ff
-    Source: https://lospec.com/palette-list/miku-fresh-retuned
+    Paleta de colores:
+    #111451: Azul oscuro
+    #796095: Púrpura oscuro
+    #7ddcc9: Verde menta claro
+    #ffe5ff: Rosa claro
+    Fuente: https://lospec.com/palette-list/miku-fresh-retuned
     */
 }
-.agenda{
+
+.agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px auto 1fr;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    max-height: 700px;
+    background-color: #796095; 
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #111451; 
+}
+
+.contactos {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.buscador {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    background-color: #111451; 
     padding: 10px;
-    border-width: 20px;
+    border-radius: 8px;
+    border: 1px solid #7ddcc9; 
 }
 
-.contactos{
-
+.buscador input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #796095; 
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
 }
 
-.contactos_fields{
-    fill: violet;
+.buscador button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.buscador img {
+    width: 15px;
+    height: 15px;
+}
+
+.contactos_fields {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #111451; 
+    border-radius: 8px;
+    border: 1px solid #7ddcc9; 
+}
+
+.contactos_fields label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #7ddcc9; 
+}
+
+.contactos_fields input {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #796095; 
+    border: 1px solid #7ddcc9; 
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.contactos_fields button {
+    padding: 10px;
+    background-color: #7ddcc9; 
+    color: #111451; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contactos_fields button:hover {
+    background-color: #45a049;
+}
+.contactos_content{
+    padding: 10px;
+    background-color:#111451;
+    border-radius: 8px;
 }
