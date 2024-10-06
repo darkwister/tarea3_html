@@ -1,23 +1,26 @@
-
 let contactosCargados = [];
-function cargar() {
-    fetch("http://www.raydelto.org/agenda.php")
-    .then(response => response.json())
-    .then(contactos => {
-        const contentElement = document.getElementById("content");
-        contentElement.innerHTML = "";
 
-        contactos.forEach(contacto => {
-            const li = document.createElement("li");
-            li.textContent = `${contacto.nombre} ${contacto.apellido} - ${contacto.telefono}`;
-            contentElement.appendChild(li);
-        });
-    })
-    .catch(error => {
-        console.error("Error al cargar los contactos:", error);
+function mostrarContactos(contactos) {
+    const contentElement = document.getElementById("content");
+    contentElement.innerHTML = ""; 
+    contactos.forEach(contacto => {
+        const li = document.createElement("li");
+        li.textContent = `${contacto.nombre} ${contacto.apellido} - ${contacto.telefono}`;
+        contentElement.appendChild(li);
     });
 }
 
+function cargar() {
+    fetch("http://www.raydelto.org/agenda.php")
+        .then(response => response.json())
+        .then(contactos => {
+            contactosCargados = contactos; 
+            mostrarContactos(contactosCargados); 
+        })
+        .catch(error => {
+            console.error("Error al cargar los contactos:", error);
+        });
+}
 
 function registrarContacto() {
     const nombre = document.getElementById('nombre').value;
@@ -53,16 +56,19 @@ function registrarContacto() {
 }
 
 function buscarContacto(event) {
-    event.preventDefault(); // Evitar comportamiento predeterminado
+    event.preventDefault(); 
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+    if(searchTerm == ""){
+        cargar()
+    } 
 
-    const searchTerm = document.getElementById('search').value.toLowerCase(); // Obtener el valor del buscador
-
+    // Filtrar contactos cargados en base al término de búsqueda (por nombre o apellido)
     const resultadosFiltrados = contactosCargados.filter(contacto => {
         return contacto.nombre.toLowerCase().includes(searchTerm) ||
                contacto.apellido.toLowerCase().includes(searchTerm);
     });
 
-    mostrarContactos(resultadosFiltrados);
+    mostrarContactos(resultadosFiltrados); // Mostrar los contactos filtrados
 }
 
 document.getElementById('agregar').addEventListener('click', registrarContacto);
