@@ -5,7 +5,7 @@ function mostrarContactos(contactos) {
     contentElement.innerHTML = ""; 
     contactos.forEach(contacto => {
         const li = document.createElement("li");
-        li.textContent = `${contacto.nombre} ${contacto.apellido} - ${contacto.telefono}`;
+        li.textContent = `${contacto.nombre} ${contacto.apellido} | ${contacto.telefono}`;
         contentElement.appendChild(li);
     });
 }

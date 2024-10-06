@@ -139,5 +139,5 @@ body {
     border-radius: 8px;
     border: 2px solid #7ddcc9;
     overflow-y: auto;
-    inline-size: auto;
+    line-height: 1.6;
 }
