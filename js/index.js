@@ -48,6 +48,9 @@ function registrarContacto() {
     .then(response => response.json()) 
     .then(data => {
         console.log("Contacto registrado:", data);
+        document.getElementById('nombre').value = "";
+        document.getElementById('apellido').value = "";
+        document.getElementById('telefono').value = "";
         cargar(); 
     })
     .catch(error => {
@@ -55,22 +58,21 @@ function registrarContacto() {
     });
 }
 
-function buscarContacto(event) {
-    event.preventDefault(); 
+function buscarContacto() {
     const searchTerm = document.getElementById('search').value.toLowerCase();
-    if(searchTerm == ""){
-        cargar()
-    } 
 
-    // Filtrar contactos cargados en base al término de búsqueda (por nombre o apellido)
+    if(searchTerm ==""){
+        mostrarContactos(contactosCargados);
+        return;
+    }
     const resultadosFiltrados = contactosCargados.filter(contacto => {
         return contacto.nombre.toLowerCase().includes(searchTerm) ||
                contacto.apellido.toLowerCase().includes(searchTerm);
     });
 
-    mostrarContactos(resultadosFiltrados); // Mostrar los contactos filtrados
+    mostrarContactos(resultadosFiltrados);
 }
 
 document.getElementById('agregar').addEventListener('click', registrarContacto);
-document.getElementById('search_button').addEventListener('click', buscarContacto);
-window.onload = cargar;
+document.getElementById('search').addEventListener('input', buscarContacto);
+document.onload(cargar());
