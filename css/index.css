@@ -138,4 +138,6 @@ body {
     background-color: #111451;
     border-radius: 8px;
     border: 2px solid #7ddcc9;
+    overflow-y: auto;
+    inline-size: auto;
 }
