@@ -3,4 +3,4 @@
 -Agregar contacto
 -Buscar contacto
 
-(capture)[img/capture%20(2).jpg]
+![capture](img/capture2.jpg)
