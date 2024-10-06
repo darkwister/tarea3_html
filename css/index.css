@@ -137,7 +137,7 @@ body {
     padding: 10px;
     background-color: #111451;
     border-radius: 8px;
-    border: 2px solid #7ddcc9;
+    border: 6px double #7ddcc9;
     overflow-y: auto;
     line-height: 1.6;
 }
